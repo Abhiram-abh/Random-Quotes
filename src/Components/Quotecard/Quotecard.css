@@ -1,0 +1,141 @@
+/* Global styles for the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Change to a more elegant font */
+    background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%); /* Light gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Quote Container */
+.quote-container {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    max-width: 700px;
+    margin: 20px;
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff8000; /* Blue color for heading */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Quote Card styles */
+.quote-card {
+    border: none;
+    padding: 30px;
+    margin: 20px 0; /* Margin only on top and bottom */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e2e2e2 100%);
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(19, 19, 19, 0.2);
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out; /* Animation for the card */
+}
+
+/* Animation for the card */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quote text styles */
+.quote-card p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #333;
+    padding: 20px;
+    border-left: 5px solid #007bff;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease; /* Animation for the quote text */
+}
+
+/* Animation for the quote text */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Button styles */
+.quote-card button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quote-card button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Decorative quote marks */
+.quote-card::before {
+    content: open-quote;
+    font-size: 3rem;
+    color: #007bff;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+.quote-card::after {
+    content: close-quote;
+    font-size: 3rem;
+    color: #007bff;
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+}
+
+.quote-container::before,
+.quote-container::after {
+    content: '';
+    position: absolute;
+    border: 5px solid #007bff; /* Blue border for glove effect */
+    border-radius: 50%; /* Circular effect */
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    z-index: -1; /* Send behind the container */
+}
+
+.quote-container::before {
+    left: -30px; /* Position to the left */
+    top: 10px; /* Adjust vertical position */
+}
+
+.quote-container::after {
+    right: -30px; /* Position to the right */
+    bottom: 10px; /* Adjust vertical position */
+}
